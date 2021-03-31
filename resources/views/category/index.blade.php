@@ -102,7 +102,7 @@ let base = window.location.origin
         let url = base + '/category/' + id
         console.log(url);
         let ob = {id : id}
-        axios.delete(url, {params: ob}).then(function(r){
+        axios.delete(url).then(function(r){
             setSwalMessage();
             getAllData();
             console.log(r);
