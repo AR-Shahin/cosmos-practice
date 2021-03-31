@@ -94,6 +94,19 @@
 
             console.log(error);
         });
+    });
+let base = window.location.origin
+//console.log(base);
+    $('body').on('click','#deleteRow',function(){
+        let id = $(this).data('id')
+        let url = base + '/category/' + id
+        console.log(url);
+        let ob = {id : id}
+        axios.delete(url, {params: ob}).then(function(r){
+            setSwalMessage();
+            getAllData();
+            console.log(r);
+        });
     })
 </script>
 @endpush
